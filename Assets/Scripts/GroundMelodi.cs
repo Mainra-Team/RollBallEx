@@ -16,6 +16,7 @@ public class GroundMelodi : MonoBehaviour
         //set Melodi
         audioSource.clip = getMelodi.clips;
         material.color = getMelodi.color;
+        material.SetColor("_EmissionColor", getMelodi.color);
     }
     private void Update()
     {
@@ -34,6 +35,11 @@ public class GroundMelodi : MonoBehaviour
         {
             audioSource.Play();
             other.transform.SetParent(transform);
+            material.EnableKeyword("_EMISSION");
+        }
+        if (other.gameObject.CompareTag("Box"))
+        {
+            Destroy(gameObject);
         }
     }
     private void OnCollisionExit(Collision other)
