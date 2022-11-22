@@ -5,6 +5,7 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    public float speedGame;
     [HideInInspector] public int score;
     bool gameover;
     private void Awake()
@@ -23,12 +24,14 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 1;
         score = 0;
+        speedGame = 5;
     }
 
     // Update is called once per frame
     void Update()
     {
         score = (int)Time.timeSinceLevelLoad;
+        speedGame = 5 + (score / 10);
 
         if (Input.anyKeyDown && gameover)
         {

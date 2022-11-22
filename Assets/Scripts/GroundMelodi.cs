@@ -20,7 +20,7 @@ public class GroundMelodi : MonoBehaviour
     private void Update()
     {
         //move up
-        transform.Translate(Vector3.up * Time.deltaTime * 5f);
+        transform.Translate(Vector3.up * Time.deltaTime * GameManager.instance.speedGame);
 
         //destroy
         if (transform.position.y > 12)

@@ -8,7 +8,7 @@ public class GroundSpawner : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("SpawnGround", 2f, Random.Range(0.5f, 2f));
+        InvokeRepeating("SpawnGround", 2f, Mathf.Lerp(1.5f, 0.5f, GameManager.instance.score / 100f));
     }
 
     // Update is called once per frame
@@ -18,6 +18,6 @@ public class GroundSpawner : MonoBehaviour
     }
     void SpawnGround()
     {
-        Instantiate(groundPrefab, new Vector3(Random.Range(-2.85f, 2.85f), Random.Range(-9.5f, -9), 6), Quaternion.identity, transform);
+        Instantiate(groundPrefab, new Vector3(Random.Range(-6f, 6f), Random.Range(transform.position.y, transform.position.y - 5), 6), Quaternion.identity, transform);
     }
 }
