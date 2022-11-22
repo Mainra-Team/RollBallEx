@@ -15,8 +15,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //setup
         HorizotalLimit();
         rb.velocity = new Vector3(0, rb.velocity.y, 0);
+        //gameover
+        if (transform.position.y < -9)
+        {
+            GameManager.instance.GameOver();
+        }
+
+        //movement
         transform.position += new Vector3(Input.GetAxis("Horizontal"), 0, 0) * speedMove * Time.deltaTime;
     }
     void HorizotalLimit()
