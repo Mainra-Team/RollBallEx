@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c231162393e8fb40aa2e2e3a21bc5b9, type: 3}
   m_Name: Mi
   m_EditorClassIdentifier: 
-  clips: {fileID: 0}
-  color: {r: 0, g: 0, b: 0, a: 0}
+  clips: {fileID: 8300000, guid: cdc1be3768de98347992c850b7d1a00f, type: 3}
+  color: {r: 1, g: 0.085204154, b: 0, a: 0}

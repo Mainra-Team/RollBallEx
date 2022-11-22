@@ -8,7 +8,7 @@ public class Spike : MonoBehaviour
     {
         if (other.gameObject.CompareTag("Player"))
         {
-            Time.timeScale = 0;
+            GameManager.instance.GameOver();
         }
     }
 }
